@@ -10,95 +10,98 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js">
-    </script>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="{{asset('template/css/styles.css')}}" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
     <style>
-        html,
-        body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
+    html,
+    body {
+        background-color: #fff;
+        color: #636b6f;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 200;
+        height: 100vh;
+        margin: 0;
+    }
 
-        .full-height {
-            height: 100vh;
-        }
+    .full-height {
+        height: 100vh;
+    }
 
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
+    .flex-center {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
 
-        .position-ref {
-            position: relative;
-        }
+    .position-ref {
+        position: relative;
+    }
 
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
+    .top-right {
+        position: absolute;
+        right: 10px;
+        top: 18px;
+    }
 
-        .content {
-            text-align: center;
-        }
+    .content {
+        text-align: center;
+    }
 
-        .title {
-            font-size: 84px;
-        }
+    .title {
+        font-size: 84px;
+    }
 
-        .links>a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
+    .links>a {
+        color: #636b6f;
+        padding: 0 25px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
 
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-
+    .m-b-md {
+        margin-bottom: 30px;
+    }
     </style>
 </head>
 
 <body>
-    <div class="flex-center position-ref full-height">
+    <nav class="sb-topnav navbar top-center navbar-expand navbar-dark bg-dark">
+        <form action="/" method="get" class="d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+
+                <input type="text" name="keyword" value="{{Request::get('keyword')}}" class="form-control"
+                    placeholder="Cari apa..?" />
+
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+
+            </div>
+        </form>
         @if (Route::has('login'))
-        <div class="top-right links">
+        <div class="links">
             @auth
-            <a href="{{ url('/home') }}">Home</a>
+            <a href="{{ url('/home') }}" class="text-white">Home</a>
             @else
-            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ route('login') }}" class="text-white">Login</a>
 
             @if (Route::has('register'))
-            <a href="{{ route('register') }}">Register</a>
+            <a href="{{ route('register') }}" class="text-white">Register</a>
             @endif
             @endauth
         </div>
         @endif
-
+    </nav>
+    <div class="flex-center position-ref full-height">
         <div class="content">
             <div class="row">
-                <div class="col-md-12">
-                    <form action="/" method="get">
-                        <div class="input-group mb-3">
-                            <input type="text" name="keyword" value="{{Request::get('keyword')}}" class="form-control"
-                                placeholder="Cari apa..?">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="submit">Cari</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <h1>Mau Cari Apa Kamu Disini</h1>
                 <div class="col-md-12">
                     @if(Request::get('keyword'))
                     <div class="card">

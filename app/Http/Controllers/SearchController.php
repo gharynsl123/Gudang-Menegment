@@ -15,6 +15,6 @@ class SearchController extends Controller
         {
             $barang = Barang::where('nama_barang','LIKE',"%$cari%")->paginate(10);
         }
-        return view('welcome', compact('barang','cari'));
+        return view('layouts.welcome', compact('barang','cari'));
     }
 }
