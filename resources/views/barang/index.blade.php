@@ -14,10 +14,9 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Kategori Barang</span>
-                                    </div>
-                                    <select class="custom-select" name="id_kategori">
+
+                                    <span class="input-group-text ">Kategori Barang</span>
+                                    <select class="form-select" name="id_kategori">
                                         <option selected>Choose...</option>
                                         @foreach($kategori as $row)
                                         <option value="{{$row->id}}">{{$row->nama_kategori}}</option>
@@ -27,10 +26,10 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Nama Ruangan</span>
-                                    </div>
-                                    <select class="custom-select" name="id_ruangan">
+
+                                    <span class="input-group-text">Nama Ruangan</span>
+
+                                    <select class="form-select" name="id_ruangan">
                                         <option selected>Choose...</option>
                                         @foreach($ruangan as $row)
                                         <option value="{{$row->id}}">{{$row->nama_ruangan}}</option>
@@ -38,32 +37,20 @@
                                     </select>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-6">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Nomor Barang</span>
-                                    </div>
-                                    <input type="text" name="nomor_barang" class="form-control"
-                                        placeholder="Nomor Barang">
-                                </div>
-                            </div> -->
+
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Nama Barang</span>
-                                    </div>
+                                    <span class="input-group-text">Nama Barang</span>
                                     <input type="text" name="nama_barang" class="form-control"
                                         placeholder="Nama Barang">
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
+                            <div class="col-md-6 mb-3">
                                 <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="">Stok/Satuan</span>
-                                    </div>
+                                    <span class="input-group-text">Stok/Satuan</span>
                                     <input type="number" name="stok" class="form-control">
-                                    <select class="custom-select" name="satuan">
+                                    <select class="form-select" name="satuan">
                                         <option selected>Choose...</option>
                                         <option value="unit">Unit</option>
                                         <option value="kilogram">Kilogram</option>
@@ -74,24 +61,17 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Upload</span>
-                                    </div>
-                                    <div class="custom-file">
-                                        <input type="file" name="gambar" class="custom-file-input"
-                                            id="inputGroupFile01">
-                                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                    </div>
+                                    <input type="file" name="gambar" class="form-control" id="inputGroupFile01">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Kondisi</span>
-                                    </div>
-                                    <select class="custom-select" name="kondisi">
+
+                                    <span class="input-group-text">Kondisi</span>
+
+                                    <select class="form-select" name="kondisi">
                                         <option selected>Choose...</option>
                                         <option value="baik">Baik</option>
                                         <option value="rusak">Rusak</option>
@@ -101,7 +81,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="input-group">
-                                    
+
                                     <textarea class="form-control" name="spek" id="konten"></textarea>
                                 </div>
                             </div>
@@ -115,12 +95,12 @@
                     </form>
                 </div>
             </div>
-            <div class="card mt-4">
-                <div class="card-header">Data Ruangan</div>
+            <h3 class="mt-5 mb-2">Data Ruangan</h3>
+            <div class="card  p-3 shadow">
 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-strip" id="myTable">
+                        <table class="table table-strip" id="datatablesSimple">
                             <thead>
                                 <th>Gambar</th>
                                 <th>Nomor Barang</th>
@@ -133,7 +113,8 @@
                                 @foreach($barang as $row)
                                 <tr>
                                     <td>
-                                    <img class="img-thumbnail" src="{{ asset('/storage/images/barang/'.$row->gambar) }}" width="100px" />
+                                        <img class="img-thumbnail"
+                                            src="{{ asset('/storage/images/barang/'.$row->gambar) }}" width="100px" />
                                     </td>
                                     <td>{{$row->nomor_barang}}</td>
                                     <td>{{$row->nama_barang}}</td>
@@ -142,12 +123,14 @@
                                         <form action="{{route('barang.destroy',$row->id)}}" method="post">
                                             @csrf
                                             {{method_field('DELETE')}}
+                                            <a href="{{route('barang.show',$row->id)}}" class="btn btn-success"><i
+                                                    class="fa-info-circle fa"></i></a>
+                                            <a href="{{route('barang.edit',$row->id)}}" class="btn btn-primary">
+                                                <div class="fa fa-pen-to-square text-white"></div>
+                                            </a>
                                             <button type="submit" class="btn btn-danger"
-                                                onclick="return confirm('Apakah anda akan menghapus {{$row->barang}} ?');">Hapus</button>
-                                            <a href="{{route('barang.edit',$row->id)}}"
-                                                class="btn btn-warning">Edit</a>
-                                            <a href="{{route('barang.show',$row->id)}}"
-                                                class="btn btn-success">Detail</a>
+                                                onclick="return confirm('Apakah anda akan menghapus {{$row->barang}} ?');"><i
+                                                    class="fa fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
