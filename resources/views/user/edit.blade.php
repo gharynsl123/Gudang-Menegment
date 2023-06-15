@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card">
+            <div class="card shadow">
                 <div class="card-header">
                     Edit Data PIC Ruangan
                 </div>
@@ -15,33 +15,28 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Nama Lengkap</span>
-                                    </div>
-                                    <input type="text" name="name" value="{{$user->name}}" class="form-control" placeholder="Nama Lengkap">
+                                    <span class="input-group-text">Nama Lengkap</span>
+                                    <input type="text" name="name" value="{{$user->name}}" class="form-control"
+                                        placeholder="Nama Lengkap">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Nama Pengguna / Username</span>
-                                    </div>
-                                    <input type="text" name="username" value="{{$user->username}}" class="form-control" placeholder="Username">
+                                    <span class="input-group-text">Nama Pengguna / Username</span>
+                                    <input type="text" name="username" value="{{$user->username}}" class="form-control"
+                                        placeholder="Username">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Email</span>
-                                    </div>
-                                    <input type="email" name="email" value="{{$user->email}}" class="form-control" placeholder="Alamat Email">
+                                    <span class="input-group-text">Email</span>
+                                    <input type="email" name="email" value="{{$user->email}}" class="form-control"
+                                        placeholder="Alamat Email">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Katasandi / Password</span>
-                                    </div>
+                                    <span class="input-group-text">Katasandi / Password</span>
                                     <input type="password" name="password" class="form-control" placeholder="Password">
                                 </div>
                             </div>

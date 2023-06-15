@@ -121,7 +121,8 @@
                                         <tr>
                                             <td>{{$row->nama_barang}}</td>
                                             <td>{{$row->nomor_barang}}</td>
-                                            <td>#</td>
+                                            <td>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

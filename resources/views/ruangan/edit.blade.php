@@ -15,26 +15,20 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
                                         <span class="input-group-text">Nomor Ruangan</span>
-                                    </div>
                                     <input type="text" name="nomor_ruangan" value="{{$ruangan->nomor_ruangan}}" class="form-control" placeholder="Nama Lengkap">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
                                         <span class="input-group-text">Nama Ruangan</span>
-                                    </div>
                                     <input type="text" name="nama_ruangan" value="{{$ruangan->nama_ruangan}}" class="form-control" placeholder="Username">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
                                         <span class="input-group-text">Ukuran Ruangan</span>
-                                    </div>
-                                    <select class="custom-select" name="ukuran">
+                                    <select class="form-select" name="ukuran">
                                         <option selected>{{$ruangan->ukuran}}</option>
                                         <option value="small">Small</option>
                                         <option value="medium">Medium</option>
@@ -44,10 +38,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
                                         <span class="input-group-text">PIC Ruangan</span>
-                                    </div>
-                                    <select class="custom-select" name="id_user">
+                                    <select class="form-select" name="id_user">
                                         <option selected value="{{$ruangan->users->id}}">{{$ruangan->users->name}}</option>
                                         @foreach($user as $row)
                                             @if($row->level ==  'pic')
