@@ -13,8 +13,9 @@
                         @csrf
                         {{method_field('PUT')}}
                         <div class="input-group mb-3">
-                                <span class="input-group-text">Nama Kategori</span>
-                            <input type="text" name="nama_kategori" value="{{$kategori->nama_kategori}}" class="form-control" placeholder="nama kategori">
+                            <span class="input-group-text">Nama Kategori</span>
+                            <input type="text" name="nama_kategori" value="{{$kategori->nama_kategori}}"
+                                class="form-control" placeholder="nama kategori">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">Edit Data</button>

@@ -12,25 +12,25 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="input-group mb-3">
-                                    <span class="input-group-text">Nama Lengkap</span>
+                                <span class="input-group-text">Nama Lengkap</span>
                                 <input type="text" name="name" class="form-control" placeholder="Nama Lengkap">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
-                                    <span class="input-group-text">Nama Pengguna / Username</span>
+                                <span class="input-group-text">Nama Pengguna / Username</span>
                                 <input type="text" name="username" class="form-control" placeholder="Username">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
-                                    <span class="input-group-text">Email</span>
+                                <span class="input-group-text">Email</span>
                                 <input type="email" name="email" class="form-control" placeholder="Alamat Email">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-group mb-3">
-                                    <span class="input-group-text">Katasandi / Password</span>
+                                <span class="input-group-text">Katasandi / Password</span>
                                 <input type="password" name="password" class="form-control" placeholder="Password">
                             </div>
                         </div>

@@ -21,8 +21,7 @@
                         <div class="col-md-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Nama Ruangan</span>
-                                <input type="text" name="nama_ruangan" class="form-control"
-                                    placeholder="Nama Ruangan">
+                                <input type="text" name="nama_ruangan" class="form-control" placeholder="Nama Ruangan">
                             </div>
                         </div>
                         <div class="col-md-6">

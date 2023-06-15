@@ -14,7 +14,8 @@
                             <tr>
                                 <th>Detail Gambar</th>
                                 <td>
-                                <img class="img-thumbnail" src="{{ asset('/storage/images/barang/'.$barang->gambar) }}" width="400px" />
+                                    <img class="img-thumbnail"
+                                        src="{{ asset('/storage/images/barang/'.$barang->gambar) }}" width="400px" />
                                 </td>
                             </tr>
                             <tr>

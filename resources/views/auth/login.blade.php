@@ -10,7 +10,8 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input class="form-control @error('email') is-invalid @enderror" name="email" id="inputEmail" type="email" placeholder="name@example.com" />
+                            <input class="form-control @error('email') is-invalid @enderror" name="email"
+                                id="inputEmail" type="email" placeholder="name@example.com" />
                             @error('email')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -21,7 +22,8 @@
 
 
                         <div class="form-floating mb-3">
-                            <input class="form-control @error('password') is-invalid @enderror" name="password" id="inputPassword" type="password" placeholder="Password" />
+                            <input class="form-control @error('password') is-invalid @enderror" name="password"
+                                id="inputPassword" type="password" placeholder="Password" />
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
